@@ -5,7 +5,7 @@ var guess;
 var hits = 0;
 var guesses = 0;
 var isSunk = false;
-location1 = Math.floor(Math.random() * 4);
+location1 = Math.floor(Math.random() * 5);
 location2 = location1 + 1;
 location3 = location1 + 2;
 while (isSunk == false) {
