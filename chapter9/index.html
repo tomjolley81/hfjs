@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Handler</title>
+    <style>
+        body { margin: 20px}
+        img ( margin: 20px)
+    </style>
+</head>
+<body>
+    <img id="zero" src="img/zeroblur.jpg">
+    <img src="img/oneblur.jpg" id="one">
+    <img src="img/twoblur.jpg" id="two">
+    <img src="img/threeblur.jpg" id="three">
+    <img src="img/fourblur.jpg" id="four">
+    <img src="img/fiveblur.jpg" id="five">
+    <script>
+        
+        window.onload = init;
+        function init() {
+            var images = document.getElementsByTagName("img");
+            for (var i = 0; i < images.length; i ++) {images[i].onclick = showAnswer;
+            }
+        }
+        function showImageZero() {
+            var image = document.getElementById("zero");
+            image.src = "zero.jpg"
+        }
+    </script>
+
+</html>

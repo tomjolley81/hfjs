@@ -70,10 +70,10 @@ var model = {
     if (direction === 1) {
       // Generate a starting location for a horizontal ship
       row = Math.floor(Math.random() * this.boardSize);
-      col = Math.floor(Math.random() * (this.boardSize - 3 + 1));
+      col = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
     } else {
       // Generate a starting location for a vertical ship
-      row = Math.floor(Math.random() * (this.boardSize - 3 + 1));
+      row = Math.floor(Math.random() * (this.boardSize - this.shipLength + 1));
       col = Math.floor(Math.random() * this.boardSize);
     }
 
@@ -93,7 +93,7 @@ var model = {
     for (var i = 0; i < this.numShips; i++) {
       var ship = this.ships[i];
       for (var j = 0; j < locations.length; j++) {
-        if (this.ships.locations.indexOf(locations[j]) >= 0) {
+        if (ship.locations.indexOf(locations[j]) >= 0) {
           return true;
         }
       }
@@ -132,6 +132,7 @@ var controller = {
   processGuess: function(guess) {
     // Code to come!
     var location = parseGuess(guess);
+
     if (location) {
       this.guesses++;
       var hit = model.fire(location);
